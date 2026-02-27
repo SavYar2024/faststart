@@ -682,13 +682,19 @@
 }
 
 .leaflet-tooltip.mapLabelPremium {
-  background: rgba(15,23,42,.92);
-  border: 1px solid rgba(255,255,255,.18);
+  background: linear-gradient(180deg, rgba(15,35,90,.95), rgba(10,18,42,.92));
+  border: 1px solid rgba(120,170,255,.35);
   color: #fff;
-  font-weight: 700;
-  padding: 6px 12px;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.4);
+  font-weight: 800;
+  padding: 12px 18px;
+  border-radius: 18px;
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.55),
+    0 0 0 1px rgba(255,255,255,.06) inset;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  letter-spacing: .2px;
+  line-height: 1.15;
 }
 
 
@@ -724,11 +730,6 @@ body{ padding-top: var(--topbar-h); }
 .leaflet-tooltip.mapLabelPremium:before{
   border-top-color: rgba(10,15,24,.80) !important;
 }
-@media (max-width: 720px){
-  .leaflet-tooltip.mapLabelPremium{ font-size: 11px; padding: 6px 8px; }
-}
-
-
 /* Leaflet premium blue pins */
 .fsPin{ background: transparent; }
 .fsPin-dot{
@@ -1066,19 +1067,6 @@ body.menuOpen .mobileMenu{
 
 /* ScrollTop center override */
 .scrollTopPremium{display:flex;align-items:center;justify-content:center;line-height:1;}
-
-
-/* Mobile: prevent map labels from overlapping by making them a bit more compact */
-@media (max-width: 720px){
-  .leaflet-tooltip.mapLabelPremium{
-    padding: 8px 12px !important;
-    border-radius: 16px !important;
-    max-width: 170px !important;
-  }
-  .leaflet-tooltip.mapLabelPremium .fsTip-title{ font-size: 13px !important; }
-  .leaflet-tooltip.mapLabelPremium .fsTip-note{ font-size: 11px !important; }
-}
-
 </style>
 </head>
 <body>
@@ -2142,24 +2130,6 @@ body.menuOpen .mobileMenu{
         { name: "WINHUB Odesa", note: "100,000 м² · E95 + port", lat: 46.48, lon: 30.73 },
       ];
 
-
-      function tooltipOpts(p){
-        const isMobile = window.matchMedia && window.matchMedia("(max-width: 720px)").matches;
-        const n = (p.name||"").toLowerCase();
-        // Spread labels for Kyiv cluster on both desktop and mobile
-        if(n.includes("airport")){
-          return { permanent: true, direction: "right", offset: isMobile ? [16, -6] : [16, -2], className: "mapLabelPremium" };
-        }
-        if(n.includes("kyiv")){
-          return { permanent: true, direction: "left", offset: isMobile ? [-16, -6] : [-16, -2], className: "mapLabelPremium" };
-        }
-        if(n.includes("odesa")){
-          return { permanent: true, direction: "top", offset: isMobile ? [0, -18] : [0, -14], className: "mapLabelPremium" };
-        }
-        return { permanent: true, direction: "top", offset: isMobile ? [0, -14] : [0, -10], className: "mapLabelPremium" };
-      }
-
-
       
       const premiumIcon = L.divIcon({
         className: "fsPin",
@@ -2190,15 +2160,23 @@ body.menuOpen .mobileMenu{
             `<div class="fsTip">
                 <div class="fsTip-title">${p.name}</div>
                 <div class="fsTip-note">${p.note}</div>
-             </div>`, tooltipOpts(p));
+             </div>`,
+            {
+              permanent: true,
+              direction: direction,
+              offset: offset,
+              className: "mapLabelPremium",
+              opacity: 1
+            }
+          );
       });
 
       // Mobile: auto-center all points with safe padding so labels don't overlap controls
       if(isMobileMap){
         try{
           const bounds = L.latLngBounds(points.map(p => [p.lat, p.lon]));
-          map.fitBounds(bounds, { paddingTopLeft: [26, 110], paddingBottomRight: [26, 110], maxZoom: 7, animate: true });
-          // One step closer on mobile for better readability
+          map.fitBounds(bounds, { paddingTopLeft: [22, 72], paddingBottomRight: [22, 86], maxZoom: 8, animate: true });
+          // One step closer on mobile for better readability (zoom in without shrinking labels)
           setTimeout(()=>{ try{ map.zoomIn(1); }catch(e){} }, 220);
         }catch(e){}
       }
