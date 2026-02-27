@@ -1416,7 +1416,7 @@ img.heroMedia{
           <span data-i18n="whM2">загальна площа</span>
         </div>
         <div class="metric">
-          <b>$80M/рік</b>
+          <b data-i18n="whM0">$80M/рік</b>
           <span data-i18n="whM3">прогнозований NOI (2032)</span>
         </div>
         <div class="metric">
@@ -1696,6 +1696,7 @@ img.heroMedia{
         whDesc:"Компактна презентація WINHUB для інвестора: локації, масштаб, ключові метрики, якір-орендарі.",
         whM1:"загальні інвестиції",
         whM2:"загальна площа",
+	whM0: "$80M/рік",
         whM3:"прогнозований NOI (2032)",
         whM4:"попередньо орендовано (EVA, VARUS)",
         whSlideT:"Деталі",
@@ -1838,6 +1839,7 @@ img.heroMedia{
         whDesc:"Compact WINHUB investor view: locations, scale, key metrics, anchor tenants.",
         whM1:"total investments",
         whM2:"total area",
+	whM0:"$80M/year",
         whM3:"projected NOI (2032)",
         whM4:"pre‑leased (EVA, VARUS)",
         whSlideT:"Details",
@@ -1937,23 +1939,70 @@ img.heroMedia{
         item.classList.toggle("active");
       });
     });
+    // Active nav highlight (fixed)
 
-    // Active nav highlight
-    const sections = ["#overview","#why-ukraine","#roles","#manufacturer","#investor","#winhub-investor","#faq"]
-      .map(id=>document.querySelector(id))
-      .filter(Boolean);
-    const navLinks = Array.from(document.querySelectorAll(".js-nav"));
-    const obs = new IntersectionObserver((entries)=>{
-      const visible = entries
-        .filter(e=>e.isIntersecting)
-        .sort((a,b)=>b.intersectionRatio - a.intersectionRatio)[0];
-      if(!visible) return;
-      const id = "#" + visible.target.id;
-      navLinks.forEach(a=>a.classList.toggle("active", a.getAttribute("href") === id));
-    }, {threshold:[.35,.5,.65]});
-    sections.forEach(s=>obs.observe(s));
+    (function(){
+      const headerEl = document.querySelector(".topbar");
+      const navLinks = Array.from(document.querySelectorAll(".js-nav"));
 
-    // Year
+      // Map nav links to their target sections (by href)
+      const items = navLinks
+        .map(a => {
+          const href = a.getAttribute("href");
+          const id = href && href.startsWith("#") ? href.slice(1) : null;
+          const section = id ? document.getElementById(id) : null;
+          return section ? { link: a, section } : null;
+        })
+        .filter(Boolean);
+
+      function headerH(){
+        return headerEl ? Math.round(headerEl.getBoundingClientRect().height) : 0;
+      }
+
+      function setActiveById(id){
+        navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + id));
+      }
+
+      function findActiveSection(){
+        const y = window.scrollY + headerH() + 24; // 24px cushion below header
+        let active = null;
+        for (const it of items){
+          const top = it.section.offsetTop;
+          if (top <= y) active = it;
+        }
+        // If we're above the first section, clear active
+        if (!active && items.length) return null;
+        return active;
+      }
+
+      function onScroll(){
+        const active = findActiveSection();
+        if (active) setActiveById(active.section.id);
+      }
+
+      // Click: smooth scroll with fixed-header offset
+      navLinks.forEach(a => {
+        a.addEventListener("click", (e) => {
+          const href = a.getAttribute("href");
+          if (!href || !href.startsWith("#") || href.length < 2) return;
+          const id = href.slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.scrollY - headerH() - 12;
+          window.scrollTo({ top, behavior: "smooth" });
+          setActiveById(id);
+        }, { passive: false });
+      });
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
+      // Initial
+      onScroll();
+    })();
+
+// Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Lang buttons
