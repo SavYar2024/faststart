@@ -1062,6 +1062,10 @@ body.menuOpen .mobileMenu{
   }
 }
 
+
+
+/* ScrollTop center override */
+.scrollTopPremium{display:flex;align-items:center;justify-content:center;line-height:1;}
 </style>
 </head>
 <body>
@@ -2170,7 +2174,9 @@ body.menuOpen .mobileMenu{
       if(isMobileMap){
         try{
           const bounds = L.latLngBounds(points.map(p => [p.lat, p.lon]));
-          map.fitBounds(bounds, { paddingTopLeft: [26, 110], paddingBottomRight: [26, 110], maxZoom: 6, animate: true });
+          map.fitBounds(bounds, { paddingTopLeft: [26, 110], paddingBottomRight: [26, 110], maxZoom: 7, animate: true });
+          // One step closer on mobile for better readability
+          setTimeout(()=>{ try{ map.zoomIn(1); }catch(e){} }, 220);
         }catch(e){}
       }
 
