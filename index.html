@@ -1066,6 +1066,19 @@ body.menuOpen .mobileMenu{
 
 /* ScrollTop center override */
 .scrollTopPremium{display:flex;align-items:center;justify-content:center;line-height:1;}
+
+
+/* Mobile: prevent map labels from overlapping by making them a bit more compact */
+@media (max-width: 720px){
+  .leaflet-tooltip.mapLabelPremium{
+    padding: 8px 12px !important;
+    border-radius: 16px !important;
+    max-width: 170px !important;
+  }
+  .leaflet-tooltip.mapLabelPremium .fsTip-title{ font-size: 13px !important; }
+  .leaflet-tooltip.mapLabelPremium .fsTip-note{ font-size: 11px !important; }
+}
+
 </style>
 </head>
 <body>
@@ -2129,6 +2142,24 @@ body.menuOpen .mobileMenu{
         { name: "WINHUB Odesa", note: "100,000 м² · E95 + port", lat: 46.48, lon: 30.73 },
       ];
 
+
+      function tooltipOpts(p){
+        const isMobile = window.matchMedia && window.matchMedia("(max-width: 720px)").matches;
+        const n = (p.name||"").toLowerCase();
+        // Spread labels for Kyiv cluster on both desktop and mobile
+        if(n.includes("airport")){
+          return { permanent: true, direction: "right", offset: isMobile ? [16, -6] : [16, -2], className: "mapLabelPremium" };
+        }
+        if(n.includes("kyiv")){
+          return { permanent: true, direction: "left", offset: isMobile ? [-16, -6] : [-16, -2], className: "mapLabelPremium" };
+        }
+        if(n.includes("odesa")){
+          return { permanent: true, direction: "top", offset: isMobile ? [0, -18] : [0, -14], className: "mapLabelPremium" };
+        }
+        return { permanent: true, direction: "top", offset: isMobile ? [0, -14] : [0, -10], className: "mapLabelPremium" };
+      }
+
+
       
       const premiumIcon = L.divIcon({
         className: "fsPin",
@@ -2159,15 +2190,7 @@ body.menuOpen .mobileMenu{
             `<div class="fsTip">
                 <div class="fsTip-title">${p.name}</div>
                 <div class="fsTip-note">${p.note}</div>
-             </div>`,
-            {
-              permanent: true,
-              direction: direction,
-              offset: offset,
-              className: "mapLabelPremium",
-              opacity: 1
-            }
-          );
+             </div>`, tooltipOpts(p));
       });
 
       // Mobile: auto-center all points with safe padding so labels don't overlap controls
