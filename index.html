@@ -3,10 +3,10 @@
 <html lang="uk">
 <head>
 <!-- Favicon -->
-<link href="assets/meta/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="assets/meta/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="assets/meta/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="assets/meta/favicon.ico" rel="icon"/>
+<link href="assets/img/faststart-icon.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="assets/img/faststart-icon.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="assets/img/faststart-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="assets/img/faststart-icon.png" rel="icon"/>
 <!-- Open Graph -->
 <meta content="FAST START — Industrial Launch Platform" property="og:title"/>
 <meta content="Prepare industrial production in Ukraine faster. Ready-to-build locations. Day 1 execution." property="og:description"/>
@@ -259,7 +259,7 @@
       box-shadow:var(--shadow2);
     }
     .ic{
-      width:42px;height:42px;border-radius:16px;
+      width:42px;height:56px;border-radius:16px;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
       display:flex; align-items:center; justify-content:center;
@@ -550,7 +550,7 @@
       align-items:center;
       justify-content:center;
 
-      height:42px;
+      height:56px;
       padding:10px 14px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.12);
@@ -658,7 +658,7 @@
 
 
   .ic.ic--logo-vert{
-    width:42px;height:42px;border-radius:16px;
+    width:42px;height:56px;border-radius:16px;
     border:1px solid rgba(255,255,255,.12);
     background:rgba(255,255,255,.04);
     display:flex; align-items:center; justify-content:center;
@@ -1103,13 +1103,11 @@ body.menuOpen .mobileMenu{
 <div class="topbar">
 <div class="container">
 <div class="topbar-inner">
+
 <a aria-label="Fast Start home" class="brand" href="#top">
-<div aria-hidden="true" class="logoMark"></div>
-<div class="brandTxt">
-<b>FAST START</b>
-<span data-i18n="brandSub">by TERWIN</span>
-</div>
+  <img src="assets/img/faststart-logo.png" alt="Fast Start" style="height:56px;width:auto;display:block;">
 </a>
+
 <nav aria-label="Navigation" class="nav">
 <a class="js-nav" data-i18n="navOverview" href="#overview">Огляд</a>
 <a class="js-nav" data-i18n="navWhy" href="#why-ukraine">Чому Україна</a>
@@ -1124,6 +1122,7 @@ body.menuOpen .mobileMenu{
 <button class="active" data-lang="uk" type="button">UA</button>
 <button data-lang="en" type="button">EN</button>
 </div>
+
 <a class="btn primary" data-i18n="topCta" href="#roles">Обрати роль</a>
 </div>
 </div>
@@ -1164,6 +1163,7 @@ body.menuOpen .mobileMenu{
 <div class="miniMetric">
 <b data-i18n="hm2v">Faster Day 1</b>
 <span data-i18n="hm2t">скорочення часу прийняття рішень</span>
+<a class="btn primary" data-i18n="topCta" href="#roles">Обрати роль</a>
 </div>
 </div>
 </div>
@@ -1236,6 +1236,7 @@ body.menuOpen .mobileMenu{
 <div class="content">
 <b data-i18n="img3t">A-class фасади та склади</b>
 <span data-i18n="img3d">Еталон якості інфраструктури та експлуатації.</span>
+<a class="btn primary" data-i18n="topCta" href="#roles">Обрати роль</a>
 </div>
 </div>
 </div>
@@ -1307,6 +1308,7 @@ body.menuOpen .mobileMenu{
 <h3 data-i18n="rolesInvTitle">Я інвестую в індустріальні активи</h3>
 <p data-i18n="rolesInvText">Мені потрібні підготовлені активи, структурована угода та чітка логіка ліквідності (exit).</p>
 <span class="go" data-i18n="rolesGo">Перейти до рішення →</span>
+<a class="btn primary" data-i18n="topCta" href="#roles">Обрати роль</a>
 </div>
 </div>
 </div>
@@ -1343,6 +1345,7 @@ body.menuOpen .mobileMenu{
 <div class="card" style="padding:12px; box-shadow:none; background:rgba(255,255,255,.02)">
 <h4 data-i18n="mfrPackT" style="margin:0 0 6px; font-size:13px">Пакет для “go/no-go”</h4>
 <p data-i18n="mfrPackD" style="margin:0; font-size:12px">Документи, ризики, бюджет, календар, структура угоди.</p>
+<a class="btn primary" data-i18n="topCta" href="#roles">Обрати роль</a>
 </div>
 </div>
 </div>
@@ -1427,6 +1430,7 @@ body.menuOpen .mobileMenu{
 <button class="btn primary" data-i18n="btnSend" type="submit">Надіслати</button>
 </div>
 </form>
+<a class="btn primary" data-i18n="topCta" href="#roles">Обрати роль</a>
 </div>
 </div>
 </div>
@@ -1528,6 +1532,7 @@ body.menuOpen .mobileMenu{
 <button class="btn primary" data-i18n="btnCall" type="submit">Надіслати</button>
 </div>
 </form>
+<a class="btn primary" data-i18n="topCta" href="#roles">Обрати роль</a>
 </div>
 </div>
 </div>
@@ -1659,7 +1664,8 @@ body.menuOpen .mobileMenu{
 <span data-i18n="faqQ3">Чи є варіанти ко‑інвестицій?</span>
 <span class="faqIcon">+</span>
 </button>
-<div class="faqA" data-i18n="faqA3">Так. Доступні JV, structured finance та залучення DFIs (IFC/EBRD), фондів і банків залежно від активу та стадії.</div>
+<div class="faqA" data-i18n="faqA3">Так. Доступні JV, structured finance та залучення DFIs (IFC/EBRD), фондів і банків залежно від активу та стадії.<a class="btn primary" data-i18n="topCta" href="#roles">Обрати роль</a>
+</div>
 </div>
 </div>
 </div>
