@@ -584,14 +584,8 @@
       .heroBadge{grid-template-columns:1fr}
       #map{height:320px}
     }
-    .logo img {
-  height: 56px;
-}
-
-@media (max-width: 768px) {
-  .logo img {
-    height: 26px;
-  }
+    @media (max-width: 768px) {
+  img[alt="Fast Start"] { height: 26px !important; }
 }
   
 .company-logos{
@@ -1113,7 +1107,7 @@ body.menuOpen .mobileMenu{
 <div class="container">
 <div class="topbar-inner">
 <a aria-label="Fast Start home" class="brand" href="#top">
-<img alt="Fast Start" src="assets/img/faststart-logo.png" style="width:auto;display:block;"/>
+<img alt="Fast Start" src="assets/img/faststart-logo.png" style="height:56px;width:auto;display:block;"/>
 </a>
 <nav aria-label="Navigation" class="nav">
 <a class="js-nav" data-i18n="navOverview" href="#overview">Огляд</a>
