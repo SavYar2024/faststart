@@ -3,24 +3,83 @@
 <html lang="uk">
 <head>
 <!-- Favicon -->
-<link href="assets/meta/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="assets/meta/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="assets/meta/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="assets/meta/favicon.ico" rel="icon"/>
+<link rel="icon" type="image/png" sizes="32x32" href="https://faststart.com.ua/assets/meta/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://faststart.com.ua/assets/meta/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://faststart.com.ua/assets/meta/favicon-180.png">
+<link rel="icon" href="https://faststart.com.ua/favicon.ico">
 <!-- Open Graph -->
 <meta content="FAST START — Industrial Launch Platform" property="og:title"/>
 <meta content="Prepare industrial production in Ukraine faster. Ready-to-build locations. Day 1 execution." property="og:description"/>
-<meta content="https://YOUR-LINK/assets/meta/og-preview.jpg" property="og:image"/>
+<meta content="https://faststart.com.ua/assets/meta/og-preview.jpg?v=2" property="og:image"/>
 <meta content="website" property="og:type"/>
 <!-- Twitter -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="FAST START — Industrial Launch Platform" name="twitter:title"/>
 <meta content="Prepare industrial production in Ukraine faster." name="twitter:description"/>
-<meta content="https://YOUR-LINK/assets/meta/og-preview.jpg" name="twitter:image"/>
+<meta content="https://faststart.com.ua/assets/meta/og-preview.jpg?v=2" name="twitter:image"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Fast Start — by TERWIN</title>
-<meta content="Fast Start — підготовка ready-to-build індустріальних локацій та структурованих угод для виробників і інвесторів. Проєкт від ." name="description"/>
+
+<!-- SEO additions -->
+<link rel="canonical" href="https://faststart.com.ua/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
+<link rel="alternate" hreflang="uk" href="https://faststart.com.ua/">
+<link rel="alternate" hreflang="en" href="https://faststart.com.ua/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://faststart.com.ua/">
+<meta property="og:url" content="https://faststart.com.ua/">
+<meta property="og:site_name" content="FASTSTART">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "WINHUB TERWIN",
+ "url": "https://faststart.com.ua",
+ "logo": "https://faststart.com.ua/assets/img/faststart-logo.png",
+ "description": "Platform for launching industrial production and logistics infrastructure in Ukraine.",
+ "sameAs": [
+  "https://www.linkedin.com/company/winhub-logistics/",
+  "https://www.facebook.com/winhub.logistics/",
+  "https://www.instagram.com/winhub.logistics/"
+ ],
+ "founder": {
+   "@type": "Organization",
+   "name": "WINHUB TERWIN"
+ },
+ "areaServed": "Europe"
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "name": "FASTSTART",
+ "url": "https://faststart.com.ua"
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebPage",
+ "name": "FASTSTART — Industrial Launch Platform",
+ "url": "https://faststart.com.ua/",
+ "description": "Platform for launching industrial production and logistics infrastructure in Ukraine.",
+ "about": {
+   "@type": "Thing",
+   "name": "Industrial Logistics Hub"
+ },
+ "mainEntity": {
+   "@type": "Organization",
+   "name": "WINHUB TERWIN"
+ }
+}
+</script>
+
+<meta name="description" content="Fast Start — платформа підготовки ready-to-build індустріальних локацій та структурованих угод для виробників і інвесторів. Проєкт від TERWIN.">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -396,7 +455,7 @@
     .field{display:flex; flex-direction:column; gap:6px;}
     .field.full{grid-column:1 / -1}
     label{font-size:12px; color:var(--muted2); font-weight:800}
-    input, textarea{
+    input, textarea, select{
       width:100%;
       padding:12px 12px;
       border-radius:14px;
@@ -1099,7 +1158,12 @@ body.menuOpen .mobileMenu{
     margin: 0;
     color: rgba(220,255,240,.88);
 }
+
+html{scroll-behavior:smooth;}
 </style>
+
+
+<link rel="preload" as="image" href="assets/img/hero_winhub.jpg" fetchpriority="high">
 </head>
 <body>
 <!-- Header -->
@@ -1107,7 +1171,7 @@ body.menuOpen .mobileMenu{
 <div class="container">
 <div class="topbar-inner">
 <a aria-label="Fast Start home" class="brand" href="#top">
-<img alt="Fast Start" src="assets/img/faststart-logo.png" style="height:56px;width:auto;display:block;"/>
+<img loading="lazy" alt="Fast Start" src="assets/img/faststart-logo.png" style="height:56px;width:auto;display:block;"/>
 </a>
 <nav aria-label="Navigation" class="nav">
 <a class="js-nav" data-i18n="navOverview" href="#overview">Огляд</a>
@@ -1153,7 +1217,7 @@ body.menuOpen .mobileMenu{
 </div>
 <div aria-label="Industrial visual" class="heroRight">
 <!-- KEEP your current hero image (replace path/name if needed) -->
-<img alt="Industrial / warehouse facade" class="heroMedia" src="assets/img/hero_winhub.jpg"/>
+<img fetchpriority="high" loading="lazy" alt="Industrial / warehouse facade" class="heroMedia" src="assets/img/hero_winhub.jpg"/>
 <div class="heroOverlay"></div>
 <div class="heroBadge">
 <div class="miniMetric">
@@ -1163,7 +1227,6 @@ body.menuOpen .mobileMenu{
 <div class="miniMetric">
 <b data-i18n="hm2v">Faster Day 1</b>
 <span data-i18n="hm2t">скорочення часу прийняття рішень</span>
-
 </div>
 </div>
 </div>
@@ -1215,7 +1278,7 @@ body.menuOpen .mobileMenu{
 <div style="height:14px"></div>
 <div class="grid3">
 <div class="mediaCard">
-<img alt="Industrial park (placeholder)" src="assets/img/industrial_park.png"/>
+<img loading="lazy" alt="Industrial park (placeholder)" src="assets/img/industrial_park.png"/>
 <div class="overlay"></div>
 <div class="content">
 <b data-i18n="img1t">Індустріальні парки</b>
@@ -1223,7 +1286,7 @@ body.menuOpen .mobileMenu{
 </div>
 </div>
 <div class="mediaCard">
-<img alt="Factory interior (placeholder)" src="assets/img/factory_interior.png"/>
+<img loading="lazy" alt="Factory interior (placeholder)" src="assets/img/factory_interior.png"/>
 <div class="overlay"></div>
 <div class="content">
 <b data-i18n="img2t">Виробничі майданчики</b>
@@ -1231,12 +1294,11 @@ body.menuOpen .mobileMenu{
 </div>
 </div>
 <div class="mediaCard">
-<img alt="Warehouse facade (placeholder)" src="assets/img/warehouse_facade.png"/>
+<img loading="lazy" alt="Warehouse facade (placeholder)" src="assets/img/warehouse_facade.png"/>
 <div class="overlay"></div>
 <div class="content">
 <b data-i18n="img3t">A-class фасади та склади</b>
 <span data-i18n="img3d">Еталон якості інфраструктури та експлуатації.</span>
-
 </div>
 </div>
 </div>
@@ -1253,7 +1315,7 @@ body.menuOpen .mobileMenu{
 </div>
 <div class="grid3">
 <div class="mediaCard">
-<img alt="Logistics corridors (placeholder)" src="assets/img/ukraine_corridors.png"/>
+<img loading="lazy" alt="Logistics corridors (placeholder)" src="assets/img/ukraine_corridors.png"/>
 <div class="overlay"></div>
 <div class="content">
 <b data-i18n="why1t">Стратегічна географія</b>
@@ -1261,7 +1323,7 @@ body.menuOpen .mobileMenu{
 </div>
 </div>
 <div class="mediaCard">
-<img alt="Rebuild (placeholder)" src="assets/img/ukraine_rebuild.png"/>
+<img loading="lazy" alt="Rebuild (placeholder)" src="assets/img/ukraine_rebuild.png"/>
 <div class="overlay"></div>
 <div class="content">
 <b data-i18n="why2t">Реконструкція та попит</b>
@@ -1269,7 +1331,7 @@ body.menuOpen .mobileMenu{
 </div>
 </div>
 <div class="mediaCard">
-<img alt="Industry costs (placeholder)" src="assets/img/ukraine_cost.png"/>
+<img loading="lazy" alt="Industry costs (placeholder)" src="assets/img/ukraine_cost.png"/>
 <div class="overlay"></div>
 <div class="content">
 <b data-i18n="why3t">Конкурентні витрати</b>
@@ -1308,7 +1370,6 @@ body.menuOpen .mobileMenu{
 <h3 data-i18n="rolesInvTitle">Я інвестую в індустріальні активи</h3>
 <p data-i18n="rolesInvText">Мені потрібні підготовлені активи, структурована угода та чітка логіка ліквідності (exit).</p>
 <span class="go" data-i18n="rolesGo">Перейти до рішення →</span>
-
 </div>
 </div>
 </div>
@@ -1325,7 +1386,7 @@ body.menuOpen .mobileMenu{
 </div>
 <div class="grid2">
 <div class="mediaCard">
-<img alt="Manufacturing launch (placeholder)" src="assets/img/manufacturing_launch.png"/>
+<img loading="lazy" alt="Manufacturing launch (placeholder)" src="assets/img/manufacturing_launch.png"/>
 <div class="overlay"></div>
 <div class="content">
 <b data-i18n="mfrMedT">Індустріальна локація, готова до старту</b>
@@ -1345,7 +1406,6 @@ body.menuOpen .mobileMenu{
 <div class="card" style="padding:12px; box-shadow:none; background:rgba(255,255,255,.02)">
 <h4 data-i18n="mfrPackT" style="margin:0 0 6px; font-size:13px">Пакет для “go/no-go”</h4>
 <p data-i18n="mfrPackD" style="margin:0; font-size:12px">Документи, ризики, бюджет, календар, структура угоди.</p>
-
 </div>
 </div>
 </div>
@@ -1397,7 +1457,7 @@ body.menuOpen .mobileMenu{
 </div>
 </div>
 <div class="grid3">
-<div class="card"><div class="ic ic--logo-vert"><img alt="WINHUB" src="assets/brands/winhub_logo_vertical.png"/></div><h4>WINHUB</h4><p data-i18n="mfrEco1">Мережа логістичних центрів класу A та досвід реалізації інфраструктурних проєктів.</p></div>
+<div class="card"><div class="ic ic--logo-vert"><img loading="lazy" alt="WINHUB" src="assets/brands/winhub_logo_vertical.png"/></div><h4>WINHUB</h4><p data-i18n="mfrEco1">Мережа логістичних центрів класу A та досвід реалізації інфраструктурних проєктів.</p></div>
 <div class="card"><div class="ic">🧩</div><h4 data-i18n="mfrEco2t">Industrial readiness</h4><p data-i18n="mfrEco2">Підготовка майданчика, інженерні рішення, календар і бюджет.</p></div>
 <div class="card"><div class="ic">🤝</div><h4 data-i18n="mfrEco3t">Structured delivery</h4><p data-i18n="mfrEco3">Прозора структура угоди та управління проєктом до результату.</p></div>
 </div>
@@ -1409,28 +1469,27 @@ body.menuOpen .mobileMenu{
 <p data-i18n="mfrCtaD">Залиште контакт — ми повернемося з варіантами локацій та попереднім roadmap під ваші вимоги.</p>
 </div>
 <div>
-<form onsubmit="return fakeSubmit(event)">
+<form action="/form/send.php" id="fs_contact_form" method="POST"><input name="form_type" type="hidden" value="contact"/><input name="lang" type="hidden" value="uk"/>
 <div class="field">
 <label data-i18n="fName">Ім’я</label>
-<input data-i18n-ph="phName" placeholder="Ім’я"/>
+<input data-i18n-ph="phName" name="name" placeholder="Ім’я" required="" type="text"/>
 </div>
 <div class="field">
 <label data-i18n="fCompany">Компанія</label>
-<input data-i18n-ph="phCompany" placeholder="Компанія"/>
+<input data-i18n-ph="phCompany" name="organization" placeholder="Компанія" type="text"/>
 </div>
 <div class="field full">
 <label data-i18n="fEmail">Email</label>
-<input data-i18n-ph="phEmail" placeholder="name@company.com" type="email"/>
+<input data-i18n-ph="phEmail" name="email" placeholder="name@company.com" required="" type="email"/>
 </div>
 <div class="field full">
 <label data-i18n="fNote">Коротко про запит</label>
-<textarea data-i18n-ph="phNote" placeholder="Площа, місто/регіон, електрика, терміни…"></textarea>
+<textarea data-i18n-ph="phNote" name="message" placeholder="Площа, місто/регіон, електрика, терміни…" required=""></textarea>
 </div>
 <div class="formActions">
-<button class="btn primary" data-i18n="btnSend" type="submit">Надіслати</button>
+</div><button class="btn primary" data-i18n="btnSend" type="submit">Надіслати</button>
 </div>
-</form>
-
+<input autocomplete="off" name="website" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;opacity:0;" tabindex="-1" type="text"/></form>
 </div>
 </div>
 </div>
@@ -1463,7 +1522,10 @@ body.menuOpen .mobileMenu{
 </div>
 </div>
 <div class="mediaCard">
-<img alt="Investor overview (placeholder)" src="assets/img/investor_overview.jpg"/>
+<picture>
+<source srcset="assets/img/investor_overview.webp" type="image/webp">
+<img loading="lazy" src="assets/img/investor_overview.jpg" alt="Investor overview (placeholder)">
+</picture>
 <div class="overlay"></div>
 <div class="content">
 <b data-i18n="invMedT">Актив, який “можна показувати” ринку</b>
@@ -1515,24 +1577,29 @@ body.menuOpen .mobileMenu{
 <p data-i18n="invCtaD">Надішліть контакт — ми підготуємо стислий investment outline та відповімо на питання щодо формату участі.</p>
 </div>
 <div>
-<form onsubmit="return fakeSubmit(event)">
+<form action="/form/send.php" id="fs_investor_form" method="POST"><input name="form_type" type="hidden" value="investor"/><input name="lang" type="hidden" value="uk"/>
 <div class="field">
 <label data-i18n="fName">Ім’я</label>
-<input data-i18n-ph="phName" placeholder="Ім’я"/>
+<input data-i18n-ph="phName" name="name" placeholder="Ім’я" required="" type="text"/>
 </div>
 <div class="field">
 <label data-i18n="fOrg">Організація</label>
-<input data-i18n-ph="phOrg" placeholder="Фонд / Банк / DFI"/>
+<select name="organization" required>
+<option value="" data-i18n="orgChoose">Оберіть</option>
+<option value="Fund" data-i18n="orgFund">Фонд</option>
+<option value="Bank" data-i18n="orgBank">Банк</option>
+<option value="DFI" data-i18n="orgDFI">DFI</option>
+<option value="Other" data-i18n="orgOther">Інше</option>
+</select>
 </div>
 <div class="field full">
 <label data-i18n="fEmail">Email</label>
-<input data-i18n-ph="phEmail" placeholder="name@company.com" type="email"/>
+<input data-i18n-ph="phEmail" name="email" placeholder="name@company.com" required="" type="email"/>
 </div>
 <div class="formActions">
-<button class="btn primary" data-i18n="btnCall" type="submit">Надіслати</button>
+</div><button class="btn primary" data-i18n="btnCall" type="submit">Надіслати</button>
 </div>
-</form>
-
+<input autocomplete="off" name="website" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;opacity:0;" tabindex="-1" type="text"/></form>
 </div>
 </div>
 </div>
@@ -1568,7 +1635,7 @@ body.menuOpen .mobileMenu{
 <div style="height:14px"></div>
 <div class="grid2">
 <div class="mediaCard" style="min-height:320px">
-<img alt="WINHUB investor slide (placeholder)" src="assets/img/winhub_investor_slide.jpg"/>
+<img loading="lazy" alt="WINHUB investor slide (placeholder)" src="assets/img/winhub_investor_slide.jpg"/>
 <div class="overlay"></div>
 <div class="content">
 <b data-i18n="whSlideT">Деталі</b>
@@ -1605,22 +1672,22 @@ body.menuOpen .mobileMenu{
 </div>
 <div class="grid2">
 <div class="mediaCard retailWrap">
-<img alt=" Group (placeholder)" src="assets/img/terwin_retail_mix.png"/>
+<img loading="lazy" alt=" Group (placeholder)" src="assets/img/terwin_retail_mix.png"/>
 <div class="overlay"></div>
 <div aria-label="Retail brands" class="retailLogos">
 <div class="retailLogo">
-<img alt="EVA" src="assets/brands/eva_logo.svg"/>
+<img loading="lazy" alt="EVA" src="assets/brands/eva_logo.svg"/>
 </div>
 <div class="retailLogo">
-<img alt="VARUS" src="assets/brands/varus_logo.svg"/>
+<img loading="lazy" alt="VARUS" src="assets/brands/varus_logo.svg"/>
 </div>
 <div class="retailLogo retailLogo--terwin">
-<img alt="TERWIN" src="assets/brands/terwin_logo.png"/>
+<img loading="lazy" alt="TERWIN" src="assets/brands/terwin_logo.png"/>
 </div>
 </div>
 </div>
 <div class="card">
-<div class="ic ic--logo"><img alt="WINHUB" src="assets/brands/winhub_logo_horizontal.svg"/></div>
+<div class="ic ic--logo"><img loading="lazy" alt="WINHUB" src="assets/brands/winhub_logo_horizontal.svg"/></div>
 <h4 data-i18n="aboutH">WINHUB — мережа логістичних центрів класу A в Україні</h4>
 <p data-i18n="aboutP">
             WINHUB розвиває мережу сучасних логістичних центрів класу A у ключових регіонах України, фокусуючись на якості інфраструктури,
@@ -1681,8 +1748,8 @@ body.menuOpen .mobileMenu{
 <div class="box">
 <b data-i18n="foot2t">Контакти</b>
 <div class="muted">
-<div>Email: <a href="mailto:info@faststart.example">info@faststart.example</a></div>
-<div>Tel: <a href="tel:+380000000000">+380 00 000 00 00</a></div>
+<div>Email: <a href="mailto:info@faststart.com.ua">info@faststart.com.ua</a></div>
+<div>Tel: <a href="tel:+380675630859">+38 067 563 0859</a></div>
 <div data-i18n="foot2a">Kyiv, Ukraine</div>
 </div>
 </div>
@@ -1698,7 +1765,7 @@ body.menuOpen .mobileMenu{
 <div class="terwinFooter">
 <div class="muted" data-i18n="terwinLine">TERWIN — Проєкт FAST START реалізується в межах групи TERWIN.</div>
 <!-- placeholder path; replace with your actual  logo -->
-<img alt=" logo" src="assets/brands/terwin_logo.png"/>
+<img loading="lazy" alt=" logo" src="assets/brands/terwin_logo.png"/>
 </div>
 <div class="muted" style="margin-top:14px; opacity:.75; font-size:12px">
         © <span id="year"></span> Fast Start. <span data-i18n="rights">All rights reserved.</span>
@@ -1850,9 +1917,10 @@ body.menuOpen .mobileMenu{
         rights:"All rights reserved.",
 
         fName:"Ім’я", fCompany:"Компанія", fEmail:"Email", fOrg:"Організація", fNote:"Коротко про запит",
-        phName:"Ім’я", phCompany:"Компанія", phEmail:"name@company.com", phOrg:"Фонд / Банк / DFI", phNote:"Площа, місто/регіон, електрика, терміни…",
+        phName:"Ім’я", phCompany:"Компанія", phEmail:"name@company.com", phOrg:"Фонд / Банк / DFI",
+        orgChoose:"Оберіть", orgFund:"Фонд", orgBank:"Банк", orgDFI:"DFI", orgOther:"Інше", phNote:"Площа, місто/регіон, електрика, терміни…",
         btnSend:"Надіслати", btnCall:"Надіслати",
-        sent:"Дякуємо! Заявку отримано (демо)."
+        sent:"Дякуємо! Заявку отримано."
       },
 
       en: {
@@ -1996,9 +2064,10 @@ body.menuOpen .mobileMenu{
         rights:"All rights reserved.",
 
         fName:"Name", fCompany:"Company", fEmail:"Email", fOrg:"Organization", fNote:"Short request",
-        phName:"Name", phCompany:"Company", phEmail:"name@company.com", phOrg:"Fund / Bank / DFI", phNote:"Area, region, power, timeline…",
+        phName:"Name", phCompany:"Company", phEmail:"name@company.com", phOrg:"Fund / Bank / DFI",
+        orgChoose:"Select", orgFund:"Fund", orgBank:"Bank", orgDFI:"DFI", orgOther:"Other", phNote:"Area, region, power, timeline…",
         btnSend:"Send", btnCall:"Send",
-        sent:"Thank you! Request received (demo)."
+        sent:"Thank you! Request received."
       }
     };
 
@@ -2027,13 +2096,26 @@ body.menuOpen .mobileMenu{
     function goTo(hash){
       const el = document.querySelector(hash);
       if(!el) return;
-      el.scrollIntoView({behavior:"smooth", block:"start"});
-    }
+      const header = document.querySelector("header");
+      const hh = header ? header.getBoundingClientRect().height : 0;
+      const offset = 50;
+      const top = el.getBoundingClientRect().top + window.scrollY - hh - offset;
+      window.scrollTo({ top, behavior:"smooth" });
+      try{ history.replaceState(null,null,hash); }catch(e){}
 
-    function fakeSubmit(e){
-      e.preventDefault();
-      alert(dict[currentLang].sent);
-      return false;
+    /*UNIVERSAL_ANCHORS*/
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener("click",(e)=>{
+        const href = a.getAttribute("href");
+        if(!href || href.length < 2) return;
+        // Header navigation links are handled by the scrollspy block
+        if (a.classList.contains("navLink") || a.closest(".nav")) return;
+        const target = document.querySelector(href);
+        if(!target) return;
+        e.preventDefault();
+        goTo(href);
+      },{passive:false});
+    });
     }
 
     // Role tiles
@@ -2047,11 +2129,12 @@ body.menuOpen .mobileMenu{
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener("click", (e)=>{
         const href = a.getAttribute("href");
-        if(href.length > 1){
-          e.preventDefault();
-          goTo(href);
-        }
-      });
+        if(!href || href.length < 2) return;
+        // If this is a top navigation link, it is handled by the nav scroll handler below
+        if (a.classList.contains("navLink") || a.closest(".nav")) return;
+        e.preventDefault();
+        goTo(href);
+      }, { passive:false });
     });
 
     // FAQ accordion
@@ -2105,15 +2188,16 @@ body.menuOpen .mobileMenu{
       // Click: smooth scroll with fixed-header offset
       navLinks.forEach(a => {
         a.addEventListener("click", (e) => {
+          e.preventDefault();
           const href = a.getAttribute("href");
           if (!href || !href.startsWith("#") || href.length < 2) return;
           const id = href.slice(1);
           const target = document.getElementById(id);
           if (!target) return;
 
-          e.preventDefault();
           const top = target.getBoundingClientRect().top + window.scrollY - headerH() - 12;
           window.scrollTo({ top, behavior: "smooth" });
+          try{history.replaceState(null,null,"#"+id);}catch(e){}
           setActiveById(id);
         }, { passive: false });
       });
@@ -2269,5 +2353,142 @@ document.addEventListener("DOMContentLoaded", function(){
     a.addEventListener('click', ()=> closeMenu());
   });
 })();
-</script></body>
+</script>
+<script>
+(() => {
+  function currentLang() {
+    const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+    if (htmlLang.startsWith('en')) return 'en';
+    // default Ukrainian
+    return 'uk';
+  }
+
+  function getDict() {
+    const lang = currentLang();
+    // try to read existing dict from global i18n map if present
+    if (window.dict && window.dict[lang]) return window.dict[lang];
+    if (window.i18n && window.i18n[lang]) return window.i18n[lang];
+    // fallback messages
+    return {
+      sending: lang === 'en' ? 'Sending…' : 'Надсилання…',
+      sent: lang === 'en' ? 'Thank you! Request received.' : 'Дякуємо! Заявку отримано.',
+      fill: lang === 'en' ? 'Please fill in all required fields.' : 'Заповніть, будь ласка, усі обов’язкові поля.',
+      spam: lang === 'en' ? 'Spam protection triggered. Please try again.' : 'Спрацював антиспам. Спробуйте ще раз.',
+      fail: lang === 'en' ? 'Send failed. Please try again later.' : 'Помилка відправки. Спробуйте пізніше.',
+      net: lang === 'en' ? 'Network error. Please try again.' : 'Помилка мережі. Спробуйте ще раз.'
+    };
+  }
+
+  function syncLang(form) {
+    const lang = currentLang();
+    const inp = form.querySelector('input[name="lang"]');
+    if (inp) inp.value = lang;
+  }
+
+  async function submitForm(form) {
+    const d = getDict();
+    syncLang(form);
+
+    // honeypot (invisible)
+    const hp = form.querySelector('input[name="website"]');
+    if (hp && hp.value.trim()) {
+      alert(d.spam);
+      return;
+    }
+
+    // simple validation for required fields
+    const required = Array.from(form.querySelectorAll('[required]'));
+    for (const el of required) {
+      if (!String(el.value || '').trim()) {
+        alert(d.fill);
+        el.focus?.();
+        return;
+      }
+    }
+
+    const btn = form.querySelector('button[type="submit"], input[type="submit"]');
+    const prevText = btn ? (btn.textContent || btn.value || '') : '';
+    if (btn) {
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      if (btn.tagName === 'BUTTON') btn.textContent = d.sending;
+      else btn.value = d.sending;
+    }
+
+    try {
+      const resp = await fetch(form.getAttribute('action') || '/form/send.php', {
+        method: 'POST',
+        body: new FormData(form)
+      });
+
+      let data = null;
+      try { data = await resp.json(); } catch (_) {}
+
+      if (!resp.ok || !data || data.ok !== true) {
+        const msg = (data && data.message) ? data.message : d.fail;
+        alert(msg);
+        return;
+      }
+
+      alert(data.message || d.sent);
+      form.reset();
+    } catch (e) {
+      alert(d.net);
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.style.opacity = '';
+        if (btn.tagName === 'BUTTON') btn.textContent = prevText;
+        else btn.value = prevText;
+      }
+    }
+  }
+
+  document.querySelectorAll('form[action="/form/send.php"]').forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitForm(form);
+    });
+  });
+})();
+</script>
+
+
+<script>
+function initLeafletMap(){
+ if(window.__mapLoaded) return;
+ window.__mapLoaded=true;
+
+ if(typeof L==="undefined") return;
+ const el=document.getElementById("map");
+ if(!el) return;
+
+ const map=L.map('map',{scrollWheelZoom:false}).setView([50.45,30.52],6);
+
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+   maxZoom:19,
+   attribution:'© OpenStreetMap'
+ }).addTo(map);
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+
+ const el=document.getElementById("map");
+ if(!el) return;
+
+ const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{
+     if(entry.isIntersecting){
+       initLeafletMap();
+       observer.disconnect();
+     }
+   });
+ });
+
+ observer.observe(el);
+
+});
+</script>
+
+</body>
 </html>
